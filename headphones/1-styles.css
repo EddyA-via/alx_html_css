@@ -1,70 +1,184 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Headphones</title>
-  <link rel="stylesheet" href="1-styles.css" />
-  <link rel="stylesheet" href="Styles/holberton_school-icon/style.css"/>
-</head>
-<body>
-  <header class="hero">
-    <div class="container">
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      <!-- Navigation Bar -->
-      <nav class="navbar">
-        <img src="images/logo_headphones.png" alt="Headphones Logo" class="logo" />
-        <ul class="nav-links">
-          <li><a href="#">What we do</a></li>
-          <li><a href="#">Our results</a></li>
-          <li><a href="#">Contact us</a></li>
-        </ul>
-      </nav>
+/* === VARIABLES === */
+:root {
+  --primary-color: #FF6565;
+  --text-color: #fff;
+  --bg-color: #1d1d1d;
+  --button-hover-opacity: 0.9;
+  --max-width: 1000px;
+}
 
-      <!-- Hero Content -->
-      <div class="hero-content">
-        <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
-        <p class="subtitle">Lorem ipsum dolor set amet lorem ipsum dolor set</p>
-        <a href="#" class="cta-button">CALL TO ACTION</a>
-        <p class="hero-subtitle">Your music, your way. Hear every detail like never before.</p>
-      </div>
+/* === GENERAL STYLES === */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
 
-    </div>
-  </header>
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
 
-  <!-- What We Do Section -->
-  <section class="services">
-    <div class="container">
-      <h2 class="section-title">What we do…</h2>
-      <p class="section-description">We help you enjoy your music anywhere, anytime.</p>
+/* === NAVIGATION BAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-      <div class="features">
-        <div class="feature">
-          <i class="holberton_school-icon holberton_school-icon-ic_sound"></i>
-          <h3>High Quality Sound</h3>
-          <p>Experience clear and powerful audio with every note.</p>
-        </div>
+.logo {
+  width: 150px;
+  height: auto;
+}
 
-        <div class="feature">
-         <i class="holberton_school-icon holberton_school-icon-ic_music"></i>
-          <h3>Long Battery Life</h3>
-          <p>Listen to music all day with long-lasting battery.</p>
-        </div>
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
 
-        <div class="feature">
-          <i class="holberton_school-icon holberton_school-icon-ic_video"></i>
-          <h3>Wireless Freedom</h3>
-          <p>Connect easily with Bluetooth and enjoy freedom of movement.</p>
-        </div>
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
 
-        <div class="feature">
-          <i class="holberton_school-icon holberton_school-icon-ic_hearing"></i>
-          <h3>Custom Sound Profiles</h3>
-          <p>Tailor your audio experience with adjustable EQ settings and personal sound preferences.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
+.nav-links a:hover {
+  color: var(--primary-color);
+}
 
+/* === HERO SECTION === */
+.hero {
+  background-image: url('images/headphones_hero_1.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: opacity 0.3s ease;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.cta-button:hover,
+.cta-button:active {
+  opacity: var(--button-hover-opacity);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* === SERVICES SECTION (WHAT WE DO) === */
+.services {
+  background-color: #2d2d2d;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.holberton_school-icon {
+  font-size: 40px;
+  color: #FF6565;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature {
+  max-width: 220px;
+  text-align: center;
+}
+
+.feature img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* === RESPONSIVE (MOBILE) === */
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .subtitle,
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    background-image: url('images/headphones_hero_2.jpg');
+    padding: 60px 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+}
